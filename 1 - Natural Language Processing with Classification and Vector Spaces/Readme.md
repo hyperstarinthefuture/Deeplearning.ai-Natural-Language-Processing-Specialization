@@ -1,9 +1,5 @@
-![](https://media-exp1.licdn.com/dms/image/C5622AQE93SfLu9WSeA/feedshare-shrink_2048_1536/0?e=1596672000&v=beta&t=m7lKkARJn-DdgMEsTXkvER982QE2wualiIJOiFnK584)
 # Natural Language Processing with Classification and Vector Spaces
 Welcome to the [first course](https://www.coursera.org/learn/classification-vector-spaces-in-nlp) of the Natural Language Processing Specialization at [Coursera](https://www.coursera.org/specializations/natural-language-processing) which is moderated by [DeepLearning.ai](http://deeplearning.ai/). The course is taught by Younes Bensouda Mourri, Łukasz Kaiser and Eddy Shyu.
-
-# My Certificate
- [3E4G88JSSHSD](https://www.coursera.org/account/accomplishments/certificate/3E4G88JSSHSD " Ibrahim Jelliti: Natural Language Processing with Classification and Vector Spaces")
  
 ## Table of contents
 
@@ -64,37 +60,37 @@ Supervised Machine Learning
 
 
 ## Logistic regression
-### Supervised Machine Learning & Sentiment Analysis
-- In supervised machine learning you have input features X and a set of labels Y.
-- The goal is to minimize your error rates or cost as much as possible.
-- To do this, run the prediction function which takes in parameters data to map your features to output labels Ŷ.
-- The best mapping from features to labels is achieved when the difference between the expected values Y and the predicted values Ŷ hat is minimized.
+### Supervised Machine Learning & Sentiment Analysis (Học có giám sát và phân loại cảm xúc)
+- Trong bài toán học máy có giám sát chúng ta sẽ có đầu vào features X và set labels Y.
+- Mục tiêu là minimize error rates / cost càng nhiều càng tốt.
+- Thực hiện: run prediction function để lấy ra các parameters data map với các features để dự đoán ra labels Ŷ
+- Mapping tốt nhất giữa Labels được dự đoán ra và Labels thực tế là difference between giữa Y và Ŷ nhỏ nhất.
 - The cost function F does this by comparing how closely the output Ŷ is to the label Y.
-- Update the parameters and repeat the whole process until your cost is minimized.
+- Cập nhật các parameters và lặp lại cho tới khi cost nhỏ nhất.
    - ![](Images/01.png)
 - The function F is equal to the sigmoid function
   - ![](Images/08.png)
 
-- Example of Supervised machine learning classification task for sentiment analysis:
-> The objective is to predict whether a tweet has a positive or a negative sentiment.
-   - to build the Logisitic regression classifier, we can do that in 3 steps: extract features, train, predict:
-      1. Process the raw tweets in the training sets and extract useful features.
-         - Tweets with a positive sentiment have a label of one, and the tweets with a negative sentiment have a label of zero.
+- Example of Supervised machine learning classification task for sentiment analysis (Ví dụ về bài toán phân loại cảm xúc):
+> Mục tiêu là để dự đoán 1 Tweet là tích cực (positive) hay tiêu cực (nagative)
+   - Để xây dựng Logistic Regression Classifier, chúng ta cần 3 bước: extract features, train, predict:
+      1. Xử lý dữ liệu thô và extract useful features.
+         - Các Tweets mang tính tích cực (positive) được gán nhãn là 1, còn các Tweet tiêu cực gán nhãn là 0.
       2. Train your logistic regression classifier while minimizing the cost
       3. Make your predictions
    - ![](Images/02.png)
 
 ### Feature Extraction
- 1. Sparse Represenation
+ 1. Sparse Represenation (Phương pháp này là dim = chiều dài của từ điển, các từ nào có trong từ điển sẽ bằng 1, các từ nào không có sẽ bằng 0).
     - To represent a text as a vector, we have to build a vocabulary and that will allow to encode any text or any tweet as an array of numbers
-    - The vocabulary *V* would be the list of unique words from your list of tweets.
+    - The vocabulary *V* would be the list of unique words from your list of tweets. (**Chú ý là Unique**)
     - Sparse Represenation assign a value of 1 to that a word of a tweet, If it doesn't appear in the vocabulary V we assign a value of 0.
     - ![](Images/03.png)
-    - problems with sparse represenation:
-    - A logistic regression model would have to learn N+1 parameters, where N is the size of the vocabulary *V* 
-    - Large training time
-    - Large prediction time
-        - ![](Images/04.png)
+    - Những vấn đề găp phải đối với phương pháp Sparse Represenation:
+      - A logistic regression model would have to learn N+1 parameters, where N is the size of the vocabulary *V*  (Cần N + 1 parameters, trong đó N là size của bộ từ điển và 1 là bias).
+      - Large training time (Tốn thời gian Train)
+      - Large prediction time (Tốn thời gian Predict)
+         - ![](Images/04.png)
         
  2. Negative and Positive Frequencies
     - Set a unique words from tweets corpus, your vocabulary.
