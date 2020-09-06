@@ -92,13 +92,13 @@ Supervised Machine Learning
       - Large prediction time (Tốn thời gian Predict)
          - ![](Images/04.png)
         
- 2. Negative and Positive Frequencies
-    - Set a unique words from tweets corpus, your vocabulary.
+ 2. Negative and Positive Frequencies (Phương pháp đếm số lần xuất hiện - Hay còn gọi là tần số Negative và Positive)
+    - Set a unique words from tweets corpus, your vocabulary. (Vẫn là lấy **Unique** các từ để tạo thành bộ từ điển)
     - Build two classes, One class associated with positive sentiment and the other with negative sentiment.
-    - To get the positive frequency in any word in your vocabulary, you count the times as it appears in the positive tweets, and same apply for negative tweets.
+    - To get the positive frequency in any word in your vocabulary, you count the times as it appears in the positive tweets, and same apply for negative tweets. (Đếm số lần các từ xuất hiện trong bộ Tweet tích cực | và đếm số lần các từ xuất hiện trong bộ Tweet tiêu cực).
        - ![](Images/05.png)
     - In practice when coding, this table is a dictionary maps the word and its corresponding class to the frequency.
-    - Use the dictionary to extract useful features for sentiment analysis, to represent a tweet in a vector of dimension 3
+    - Use the dictionary to extract useful features for sentiment analysis, to represent a tweet in a vector of dimension 3 (DIM = 3)
        - [bias=1,sum of the positive frequencies for every unique word on tweet, sum of the negative frequencies for every unique word on tweet]
        - ![](Images/06.png)
 
