@@ -60,7 +60,10 @@ Supervised Machine Learning
 
 
 ## Logistic regression
-### Supervised Machine Learning & Sentiment Analysis (Học có giám sát và phân loại cảm xúc) 
+### Supervised Machine Learning & Sentiment Analysis 
+
+(Học có giám sát và phân loại cảm xúc) 
+
 - Trong bài toán học máy có giám sát chúng ta sẽ có đầu vào features X và set labels Y.
 - Mục tiêu là minimize error rates / cost càng nhiều càng tốt.
 - Thực hiện: run prediction function để lấy ra các parameters data map với các features để dự đoán ra labels Ŷ
