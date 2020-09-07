@@ -10,9 +10,9 @@ Welcome to the [first course](https://www.coursera.org/learn/classification-vect
     - [x] [Supervised Machine Learning & Sentiment Analysis](#supervised-machine-learning--sentiment-analysis)
     - [x] [Feature Extraction](#feature-extraction)
     - [x] [Preprocessing](#preprocessing)
-    - [Training Logistic Regression](#training-logistic-regression)
-    - [Testing Logistic Regression](#testing-logistic-regression)
-    - [Cost Function](#cost-function)
+    - [x] [Training Logistic Regression](#training-logistic-regression)
+    - [x] [Testing Logistic Regression](#testing-logistic-regression)
+    - [x] [Cost Function](#cost-function)
   - [Naive Bayes](#naive-bayes)
     - [Conditional Probability](#conditional-probability)
     - [Bayes' rule](#bayes-rule)
@@ -117,13 +117,15 @@ Supervised Machine Learning
 
 ### Training Logistic Regression 
 - To train a logistic regression classifier, iterate until you find the set of parameters θ, that minimizes your cost function.
+- Để thực hiện Train cho bài toán Logistic Regression Classifier, lặp lại cho đến khi tìm được parameters theta tối ưu cost function.
+- Thuật toán này gọi làm Gradient Descent. 
 - This algorithm of training is called gradient descent.
   - ![](Images/09.png)
   
 ### Testing Logistic Regression
 - You will need X_val and Y_val, Data that was set-aside during trainings, also known as the validation sets and θ.
-1. First, compute the sigmoid function for X_val with parameters θ
-2. Second, evaluate if each value of h of Theta is greater than or equal to a threshold value, often set to 0.5
+1. First, compute the sigmoid function for X_val with parameters θ (Bước 1: Tính sigmoid function của X_val với Parameters theta)
+2. Second, evaluate if each value of h of Theta is greater than or equal to a threshold value, often set to 0.5 (Bước 2: giá trị của h nếu lớn hơn ngưỡng thì positive, ngược lại negative)
 3. compute the accuracy of your model over the validation sets
    - ![](Images/10.png)
 
@@ -131,8 +133,8 @@ Supervised Machine Learning
 - The variable m, which is just the number of training examples in your training set indicates thesum over the cost of each training example.
 - The equation has two terms that are added together:
   - the left part y(i)*log h(x(i),θ) is the logistic regression function log(Ŷ) applied to each training example y(i)
-  - if y = 1 ==> L(Ŷ,1) = -log(Ŷ) ==> we want Ŷ to be the largest ==> Ŷ biggest value is 1
-  - if y = 0 ==> L(Ŷ,0) = -log(1-Ŷ) ==> we want 1-Ŷ to be the largest ==> Ŷ to be smaller as possible because it can only has 1 value.
+  - if y = 1 ==> L(Ŷ,1) = -log(Ŷ) ==> we want Ŷ to be the largest ==> Ŷ biggest value is 1 (Trong trường hợp y = 1 chúng ta mong muốn Y_hat lớn nhất => 1)
+  - if y = 0 ==> L(Ŷ,0) = -log(1-Ŷ) ==> we want 1-Ŷ to be the largest ==> Ŷ to be smaller as possible because it can only has 1 value. (Trong trường hợp y = 0, ta mong muốn Y_hat nhỏ nhất => 0)
     - ![](Images/11.png)
 
 ## Naive Bayes
