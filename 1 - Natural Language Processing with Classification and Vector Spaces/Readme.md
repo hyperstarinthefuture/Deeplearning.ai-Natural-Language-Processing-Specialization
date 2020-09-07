@@ -7,9 +7,9 @@ Welcome to the [first course](https://www.coursera.org/learn/classification-vect
   - [Table of contents](#table-of-contents)
   - [Course summary](#course-summary)
   - [Logistic regression](#logistic-regression)
-    - [Supervised Machine Learning & Sentiment Analysis](#supervised-machine-learning--sentiment-analysis)
-    - [Feature Extraction](#feature-extraction)
-    - [Preprocessing](#preprocessing)
+    - [x] [Supervised Machine Learning & Sentiment Analysis](#supervised-machine-learning--sentiment-analysis)
+    - [x] [Feature Extraction](#feature-extraction)
+    - [x] [Preprocessing](#preprocessing)
     - [Training Logistic Regression](#training-logistic-regression)
     - [Testing Logistic Regression](#testing-logistic-regression)
     - [Cost Function](#cost-function)
@@ -60,7 +60,7 @@ Supervised Machine Learning
 
 
 ## Logistic regression
-### Supervised Machine Learning & Sentiment Analysis (Học có giám sát và phân loại cảm xúc)
+### Supervised Machine Learning & Sentiment Analysis (Học có giám sát và phân loại cảm xúc) [Oke] 
 - Trong bài toán học máy có giám sát chúng ta sẽ có đầu vào features X và set labels Y.
 - Mục tiêu là minimize error rates / cost càng nhiều càng tốt.
 - Thực hiện: run prediction function để lấy ra các parameters data map với các features để dự đoán ra labels Ŷ
@@ -80,7 +80,7 @@ Supervised Machine Learning
       3. Make your predictions
    - ![](Images/02.png)
 
-### Feature Extraction
+### Feature Extraction [Oke] 
  1. Sparse Represenation (Phương pháp này là dim = chiều dài của từ điển, các từ nào có trong từ điển sẽ bằng 1, các từ nào không có sẽ bằng 0).
     - To represent a text as a vector, we have to build a vocabulary and that will allow to encode any text or any tweet as an array of numbers
     - The vocabulary *V* would be the list of unique words from your list of tweets. (**Chú ý là Unique**)
@@ -102,15 +102,17 @@ Supervised Machine Learning
        - [bias=1,sum of the positive frequencies for every unique word on tweet, sum of the negative frequencies for every unique word on tweet]
        - ![](Images/06.png)
 
-### Preprocessing
-- Use of stemming and stop words for text pre-processing
+### Preprocessing [Oke]
+- Use of stemming and stop words for text pre-processing. (Dùng stem để đưa các từ về từ gốc | Stop-words loại bỏ các từ không có ý nghĩa). 
+- Chú ý về stopwords sẽ tùy thuộc vào từng bài toán, đôi khi có bài toán những từ trong stopwords lại có ích đối với bài toán đó.
+- Còn về dấu chấm câu, có thể vẫn phải để lại để biểu thị cảm xúc chẳng hạn.
+
 - First, I remove all the words that don't add significant meaning to the tweets, aka. stop words and punctuation marks.
 - In some contexts you won't have to eliminate punctuation. So you should think carefully about whether punctuation adds important information to your specific NLP task or not.
 - Stemming in NLP is simply transforming any word to its base stem.
   - ![](Images/07.png)
-  -  
 
-### Training Logistic Regression
+### Training Logistic Regression 
 - To train a logistic regression classifier, iterate until you find the set of parameters θ, that minimizes your cost function.
 - This algorithm of training is called gradient descent.
   - ![](Images/09.png)
