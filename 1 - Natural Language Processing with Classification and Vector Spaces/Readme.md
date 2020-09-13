@@ -14,16 +14,16 @@ Welcome to the [first course](https://www.coursera.org/learn/classification-vect
     - [x] [Testing Logistic Regression](#testing-logistic-regression)
     - [x] [Cost Function](#cost-function)
   - [Naive Bayes](#naive-bayes)
-    - [Conditional Probability](#conditional-probability)
-    - [Bayes' rule](#bayes-rule)
-    - [Laplace smoothing](#laplace-smoothing)
-    - [Ratio of probabilities](#ratio-of-probabilities)
-    - [Likelihood times prior](#likelihood-times-prior)
-    - [Log Likelihood + log prior](#log-likelihood--log-prior)
-    - [Training Naïve Bayes](#training-naïve-bayes)
-    - [Testing Naïve Bayes](#testing-naïve-bayes)
-    - [Naïve Bayes Applications](#naïve-bayes-applications)
-    - [Sources of Errors in Naïve Bayes](#sources-of-errors-in-naïve-bayes)
+    - [x] [Conditional Probability](#conditional-probability)
+    - [x] [Bayes' rule](#bayes-rule)
+    - [x] [Laplace smoothing](#laplace-smoothing)
+    - [x] [Ratio of probabilities](#ratio-of-probabilities)
+    - [x] [Likelihood times prior](#likelihood-times-prior)
+    - [x] [Log Likelihood + log prior](#log-likelihood--log-prior)
+    - [x] [Training Naïve Bayes](#training-naïve-bayes)
+    - [x] [Testing Naïve Bayes](#testing-naïve-bayes)
+    - [x] [Naïve Bayes Applications](#naïve-bayes-applications)
+    - [x] [Sources of Errors in Naïve Bayes](#sources-of-errors-in-naïve-bayes)
   - [Word Embeddings](#word-embeddings)
     - [Vector space models](#vector-space-models)
     - [Word by Word Design](#word-by-word-design)
@@ -139,22 +139,26 @@ Supervised Machine Learning
 
 ## Naive Bayes
 ### Conditional Probability
+(Xác suất có điều kiện)
+
 - In a corpus of tweets that can be categorized as either positive or negative sentiment, such words are sometimes being labeled positive and sometimes negative.pain
 - ![](Images/12.png)
 - Defining events A as a tweet being labeled positive, then the probability of events A shown as P of A here is calculated as the ratio between the count of positive tweets and the corpus divided by the total number of tweets in the corpus. 
-- Think about probabilities as counting how frequently an events occur.
+- Think about probabilities as counting how frequently an events occur. (đếm tần suất 1 sự kiện xảy ra)
 - The probability of the tweets expressing a negative sentiment is just equal to one minus the probability of a positive sentiment.
 - ![](Images/13.png)
-- Conditional probabilities is the probability of an outcome B knowing that event A already happened.
+- Conditional probabilities is the probability of an outcome B knowing that event A already happened. (Xác suất có điều kiện là xác suất của một kết quả B khi biết A xảy ra)
 ### Bayes' rule
+(Công thức Bayes)
+
 - Bayes' rule states that the probability of X given Y is equal to the probability of Y given X times the ratio of the probability of X over the probability of Y.
 - ![](Images/14.png)
 -  The first step for Naive Bayes allows you to compute the conditional probabilities of each word given the class. 
 -  ![](Images/15.png)
 ### Laplace smoothing
-- Laplacian smoothing, a technique you can use to avoid your probabilities being zero.
+- Laplacian smoothing, a technique you can use to avoid your probabilities being zero. (Kỹ thuật giúp tránh cho xác suất bằng 0).
 - ![](Images/16.png)
-- Appliying the formula on the table, the sum of probabilities will still be one and no longer has a probability of zero.
+- Appliying the formula on the table, the sum of probabilities will still be one and no longer has a probability of zero. (Tổng các xác suất vẫn bằng 1 nhưng không còn xác suất bằng 0 nữa).
 - ![](Images/44.png)
 ### Ratio of probabilities
 - based on the last table, ratio of probability are defined as the positive conditional probabilitie of a word divided by its negative probability.
@@ -163,6 +167,8 @@ Supervised Machine Learning
 - Likelihood times prior 
 - ![](Images/18.png)
 ### Log Likelihood + log prior
+
+- log prior: tỷ lệ các tweet positive / tweet negative để tránh lệch quá nhiều trong bộ từ điển.
 - To avoid numerical underflow (due to multiplying small numbers) we compute the log of the likelihood
 - ![](Images/19.png)
 - If the Log Likelihood + log prior > 0 Then the tweet has a positive sentiment. Otherwise, the tweet has a negative sentiment.
@@ -200,6 +206,7 @@ Supervised Machine Learning
     - For example if we can not decide whether the word **bank** (for example) refers to the river or the financial institution, compute the ratio
     - ![](Images/25.png)
 - Naïve Bayes Assumptions:
+  - Trong công thức Naive Bayes giả sử độc lập => Not True in NLP.
   - Conditional Independence : Not True in NLP
   - Relative frequency of training classes affect the model and can be not representative of the real world distribution
 ### Sources of Errors in Naïve Bayes
